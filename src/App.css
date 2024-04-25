@@ -1,38 +1,131 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: url(../../my-app/public/background_mount_trees2.svg) no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+.header  {
+    display: flex;
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: "Goudy Bookletter 1911", sans-serif;
+    color: #4FB477;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+ }
+
+.checklist {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: white;
+    opacity: 70%;
+    margin: 2rem 0;
+    padding: 0 10px;
+    background: linear-gradient(121deg, rgba(113,113,113,1) 29%, rgba(124,123,123,1) 46%, rgba(5,255,0,0) 99%);
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    box-shadow: 3px 3px #4FB477, -1em 0 .4em #333333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.checklist_title {
+    color: #4FB477;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-family: "Goudy Bookletter 1911", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 15rem;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(290deg, rgba(79,180,119,0), rgba(79,180,119,1));
+    box-shadow: 3px 3px #4FB477, -1em 0 .4em #333333;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.label_position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    justify-content: space-between;
+}
+.button {
+    background-color: #4FB477;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 768px) {
+    .App {
+        width: 100%;
+        padding: 2rem 0;
+        background: url(../../my-app/public/background_mount_trees2.svg) no-repeat center right fixed ;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .checklist {
+        font-size: unset;
+        margin: 2rem 0;
+    }
 }
+
+@keyframes easeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes easeInAnimationHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.checklist_element {
+    animation: easeInAnimation 2s ease-in forwards;
+}
+
+.title_element {
+    animation: easeInAnimationHeader 2s ease-in forwards;
+}
+
