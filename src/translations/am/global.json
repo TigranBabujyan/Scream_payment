@@ -1,25 +1,25 @@
 {
-    "title": "MEDICAL CONTRAINDICATIONS AM",
-    "subtitle": "Most people can jump, but there are diseases that (with whom) you must be careful.",
+    "title": "Հիվանդությունների",
+    "subtitle": "ցանկ, որոնց առկայության դեպքում խորհուրդ չի տրվում մասնակցել էքստրեմալ սպորտային միջոցառմանը.",
     "list": {
-        "1": "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
-        "2": "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
-        "3": "Respiratory system: asthma of mixed genesis.",
-        "4": " (The) early postoperative period: first 3 months after surgery",
-        "5": "Intracranial hypertension, epilepsy.",
-        "6": "Thyrotoxicosis.",
-        "7": "Pregnancy",
-        "8": "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
-        "9": "The omission of the kidneys of 2-3 degrees.",
-        "10": "Strong nervous disorders.",
-        "11": "Diabetes.",
-        "12": "Coming to the event in a state of alcoholic, drug intoxication",
-        "13": "FACE CONTROL.",
-        "14": "Do not listen to / ignore the guidance of instructors",
-        "15": "SMOKING NEAR GEAR."
+        "1": "Հենաշարժիչ համակարգ՝ ողնաշարի վնասվածք, ողնաշարի վիրահատություն, ողնաշարի ճողվածք, սկոլիոզ, ողնաշարի զարգացման բնածին խախտում",
+        "2": "Սիրտ-անոթային համակարգ՝ սրտի արատներ՝բնածին և ձեռքբերովի, կարդիոստիմուլյատոր, սինուսային առիթմիա, զարկերակային գերճնշում, հիպերտոնիկ հիվանդություններ, սրտային անբավարվածություն",
+        "3": "Շնչառական համակարգ՝ բրոնխային հեղձուկ (բրոնխիալ ասթմա)",
+        "4": "Վաղ հետվիրահատական շրջան՝ հետվիրահատական առաջին երկու ամիսը",
+        "5": "Միոպիա (կարճատեսություն)",
+        "6": "Տեսողության լազերային շտկում",
+        "7": "Գլխուղեղի գերճնշում",
+        "8": "Էպիլեպսիա",
+        "9": "Թիերոտոքսիկոզ (վահանագեղձի գերաճ և գերֆունկցիա)",
+        "10": "Երիկամների իջեցում 2-3 աստիճանի",
+        "11": "Ընթացիկ հղիություն.",
+        "12": "Նյարդահոգեկան հիվանդություններ՝ շիզոֆրենիա,միելոդիսպլաստիկ համախտանիշ և այլ նյարդային հիվանդություններ",
+        "13": "",
+        "14": "Չլսել/անտեսել հրահանգիչների ցուցումները",
+        "15": "ԾԽԵԼ ԳՈՒՅՔԻ ՄՈՏ."
     },
-    "lower_title": "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!",
-    "agreement": "I reed and acknowledge.",
-    "submit": "Submit"
+    "lower_title": "Հիշեք, կազմակերպիչները չեն կարող վիզուալ գնահատել ձեր ֆիզիկական և հոգեբանական վիճակը, դուք պատասխանատու ձեր թռիջքի համար!",
+    "agreement": "Կարդացել և Ծանոթացել եմ պայմաններին!",
+    "submit": "Հաջորդ"
 
 }
