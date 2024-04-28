@@ -1,7 +1,8 @@
 import React from 'react';
 import './index.css';
 import {useTranslation} from "react-i18next";
-import {Link} from "react-router-dom";
+import 'flag-icons/css/flag-icons.min.css';
+
 const Home: React.FC = () => {
 
     const [t, i18n] = useTranslation("global")
@@ -29,9 +30,9 @@ const Home: React.FC = () => {
                 <header className='header'>Scream Of Soul</header>
                 <div className='checklist'>
                     <div className='language'>
-                        <button onClick={() => handleChangeLanguage("am")}>AM</button>
-                        <button onClick={() => handleChangeLanguage("en")}>EN</button>
-                        <button onClick={() => handleChangeLanguage("ru")}>RU</button>
+                        <button className='button' onClick={() => handleChangeLanguage("am")}><span className="fi fi-am"/></button>
+                        <button className='button' onClick={() => handleChangeLanguage("en")}><span className="fi fi-gb-eng"/></button>
+                        <button className='button' onClick={() => handleChangeLanguage("ru")}><span className="fi fi-ru"/></button>
                     </div>
                     <ol>
                         <div className='checklist_title'>{t('title')}</div>

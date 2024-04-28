@@ -1,25 +1,25 @@
 {
-  "title": "MEDICAL CONTRAINDICATIONS RU",
-  "subtitle": "Most people can jump, but there are diseases that (with whom) you must be careful.",
+  "title": "МЕДИЦИНСКИЕ ПРОТИВОПОКАЗАНИЯ",
+  "subtitle": "Большинству людей прыгать можно, но существуют заболевания, с которыми действительно стоит поберечься:",
   "list": {
-    "1": "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
-    "2": "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
-    "3": "Respiratory system: asthma of mixed genesis.",
-    "4": " (The) early postoperative period: first 3 months after surgery",
-    "5": "Intracranial hypertension, epilepsy.",
-    "6": "Thyrotoxicosis.",
-    "7": "Pregnancy",
-    "8": "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
-    "9": "The omission of the kidneys of 2-3 degrees.",
-    "10": "Strong nervous disorders.",
-    "11": "Diabetes.",
-    "12": "Coming to the event in a state of alcoholic, drug intoxication",
-    "13": "FACE CONTROL.",
-    "14": "Do not listen to / ignore the guidance of instructors",
-    "15": "SMOKING NEAR GEAR."
+    "1": " Опорно-двигательная система: травмы позвоночника в прошлом, операции на позвоночнике, грыжи межпозвоночных дисков, сколиоз 3 степени, врожденные пороки развития позвоночника.",
+    "2": "Сердечно-сосудистая система: врожденные и приобретенные пороки развития сердца, кардиостимулятор , нарушения ритма (аритмия), артериальная гипертензия, гипертоническая болезнь 2-3 стадии, сердечная недостаточность.",
+    "3": "Дыхательная система: бронхиальная астма смешанного генеза",
+    "4": " Ранний послеоперационный период: первые 3 месяца после операции",
+    "5": "Повышенное внутричерепное давление, эпилепсия.",
+    "6": "Тиреотоксикоз.",
+    "7": "Беременность.",
+    "8": "Психиатрические заболевания в стадии обострения: шизофрения, МДС и др..",
+    "9": "Опущение почек 2-3 степени",
+    "10": "Сильные нервные расстройства.",
+    "11": "Сахарный диабет.",
+    "12": "Приходить на мероприятие в состоянии алкогольного, наркотического опьянения.",
+    "13": "На прыжках существует фейс-контроль.",
+    "14": "Не слушать/игнорировать указания инструкторов.",
+    "15": "КУРИТЬ РЯДОМ СО СНАРЯЖЕНИЕМ."
   },
-  "lower_title": "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!",
-  "agreement": "I reed and acknowledge.",
-  "submit": "Submit"
+  "lower_title": "Помните, что организаторы не могут визуально оценить ваше физическое и психологическое здоровье, ответственны за совершенный прыжок вы сами!",
+  "agreement": "Я прочитал и оэнакомился!",
+  "submit": "Следующее"
 
 }
