@@ -4,70 +4,6 @@ import {useTranslation} from "react-i18next";
 import {Link} from "react-router-dom";
 const Home: React.FC = () => {
 
-    const props = {
-
-        arm: {
-            title: "MEDICAL CONTRAINDICATIONS",
-            subtitle: "Most people can jump, but there are diseases that (with whom) you must be careful.",
-            1: "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
-            2: "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
-            3: "Respiratory system: asthma of mixed genesis.",
-            4: " (The) early postoperative period: first 3 months after surgery",
-            5: "Intracranial hypertension, epilepsy.",
-            6: "Thyrotoxicosis.",
-            7: "Pregnancy",
-            8: "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
-            9: "The omission of the kidneys of 2-3 degrees.",
-            10: "Strong nervous disorders.",
-            11: "Diabetes.",
-            12: "Coming to the event in a state of alcoholic, drug intoxication",
-            13: "FACE CONTROL.",
-            14: "Do not listen to / ignore the guidance of instructors",
-            15: "SMOKING NEAR GEAR.",
-            lower_title: "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!"
-        },
-        eng: {
-            title: "MEDICAL CONTRAINDICATIONS",
-            subtitle: "Most people can jump, but there are diseases that (with whom) you must be careful.",
-            1: "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
-            2: "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
-            3: "Respiratory system: asthma of mixed genesis.",
-            4: " (The) early postoperative period: first 3 months after surgery",
-            5: "Intracranial hypertension, epilepsy.",
-            6: "Thyrotoxicosis.",
-            7: "Pregnancy",
-            8: "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
-            9: "The omission of the kidneys of 2-3 degrees.",
-            10: "Strong nervous disorders.",
-            11: "Diabetes.",
-            12: "Coming to the event in a state of alcoholic, drug intoxication",
-            13: "FACE CONTROL.",
-            14: "Do not listen to / ignore the guidance of instructors",
-            15: "SMOKING NEAR GEAR.",
-            lower_title: "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!"
-        },
-        rus: {
-            title: "MEDICAL CONTRAINDICATIONS",
-            subtitle: "Most people can jump, but there are diseases that (with whom) you must be careful.",
-            1: "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
-            2: "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
-            3: "Respiratory system: asthma of mixed genesis.",
-            4: " (The) early postoperative period: first 3 months after surgery",
-            5: "Intracranial hypertension, epilepsy.",
-            6: "Thyrotoxicosis.",
-            7: "Pregnancy",
-            8: "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
-            9: "The omission of the kidneys of 2-3 degrees.",
-            10: "Strong nervous disorders.",
-            11: "Diabetes.",
-            12: "Coming to the event in a state of alcoholic, drug intoxication",
-            13: "FACE CONTROL.",
-            14: "Do not listen to / ignore the guidance of instructors",
-            15: "SMOKING NEAR GEAR.",
-            lower_title: "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!"
-        }
-    }
-
     const [t, i18n] = useTranslation("global")
     const handleChangeLanguage = (lang: string) => {
         i18n.changeLanguage(lang)
@@ -80,6 +16,10 @@ const Home: React.FC = () => {
             button.disabled = !checkbox.checked;
         });
     }
+
+    const navigateToLink = () => {
+        window.location.href = 'https://payment.paylink.am/?id=cWREbjZKQkxlZE1HMktna05ENTBXcFIzMjM0QkRqWEJCaDVIK2RnL3AzUDUreTVKczN6VStJZW5mSXRxQ01XYVVPd0dzRlREN2FzYUJrTUtOVGQ2ZXc9PQ';
+    };
 
 
 
@@ -120,7 +60,10 @@ const Home: React.FC = () => {
                             <input type="checkbox" id={"myCheckbox"}/>
                             <div className="agreement">{t("agreement")}</div>
                         </div>
-                        <button id={'myButton'} disabled={true}>{t('submit')}</button>
+                        <div onClick={navigateToLink}>
+                             {/*There is a bug a active and not active button on a checkbox click!!!*/}
+                            <button  id={'myButton'} disabled={true}>{t('submit')}</button>
+                        </div>
                     </div>
                 </div>
             </div>
