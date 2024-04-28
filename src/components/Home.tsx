@@ -1,7 +1,10 @@
 import React from 'react';
+
 import './index.css';
-import {useTranslation} from "react-i18next";
 import 'flag-icons/css/flag-icons.min.css';
+
+import {useTranslation} from "react-i18next";
+
 
 const Home: React.FC = () => {
 
@@ -22,8 +25,6 @@ const Home: React.FC = () => {
         window.location.href = 'https://payment.paylink.am/?id=cWREbjZKQkxlZE1HMktna05ENTBXcFIzMjM0QkRqWEJCaDVIK2RnL3AzUDUreTVKczN6VStJZW5mSXRxQ01XYVVPd0dzRlREN2FzYUJrTUtOVGQ2ZXc9PQ';
     };
 
-
-
     return (
         <div className='main'>
             <div className='body'>
@@ -38,21 +39,9 @@ const Home: React.FC = () => {
                         <div className='checklist_title'>{t('title')}</div>
                         <div className='checklist_subtitle'>{t('subtitle')}</div>
                         <div className='list'>
-                            <li>{t("list.1")}</li>
-                            <li>{t("list.2")}</li>
-                            <li>{t("list.3")}</li>
-                            <li>{t("list.4")}</li>
-                            <li>{t("list.5")}</li>
-                            <li>{t("list.6")}</li>
-                            <li>{t("list.7")}</li>
-                            <li>{t("list.8")}</li>
-                            <li>{t("list.9")}</li>
-                            <li>{t("list.10")}</li>
-                            <li>{t("list.11")}</li>
-                            <li>{t("list.12")}</li>
-                            <li>{t("list.13")}</li>
-                            <li>{t("list.14")}</li>
-                            <li>{t("list.15")}</li>
+                            {Array.from({ length: 15 }, (_, i) => (
+                                <li key={i}>{t(`list.${i + 1}`)}</li>
+                            ))}
                         </div>
                     </ol>
                     <div className="lower_title">{t("lower_title")}</div>
@@ -63,7 +52,7 @@ const Home: React.FC = () => {
                         </div>
                         <div onClick={navigateToLink}>
                              {/*There is a bug a active and not active button on a checkbox click!!!*/}
-                            <button  id={'myButton'} disabled={true}>{t('submit')}</button>
+                            <button id={'myButton'} disabled={true}>{t('submit')}</button>
                         </div>
                     </div>
                 </div>

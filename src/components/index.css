@@ -15,8 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: gold;
-    opacity: 70%;
+    background: rgba(212,175,55, 0.7);
 }
 
 .header {
@@ -29,9 +28,21 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+
 }
 
 .checklist {
+    display: flex;
+    flex-direction: column;
+}
+
+.checklist_title {
+    display: flex;
+    align-items: center;
+
+}
+
+.checklist_subtitle {
 
 }
 
@@ -55,6 +66,5 @@
     background-color: rgba(0, 0, 0, 0.0);
     border: none;
     cursor: pointer;
-    /*padding: 0;*/
     color: white;
 }
