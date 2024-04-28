@@ -1,26 +1,79 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from "./components/Home";
+const App: React.FC = () => {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    const props = {
+
+        arm: {
+            title: "MEDICAL CONTRAINDICATIONS",
+            subtitle: "Most people can jump, but there are diseases that (with whom) you must be careful.",
+            1: "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
+            2: "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
+            3: "Respiratory system: asthma of mixed genesis.",
+            4: " (The) early postoperative period: first 3 months after surgery",
+            5: "Intracranial hypertension, epilepsy.",
+            6: "Thyrotoxicosis.",
+            7: "Pregnancy",
+            8: "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
+            9: "The omission of the kidneys of 2-3 degrees.",
+            10: "Strong nervous disorders.",
+            11: "Diabetes.",
+            12: "Coming to the event in a state of alcoholic, drug intoxication",
+            13: "FACE CONTROL.",
+            14: "Do not listen to / ignore the guidance of instructors",
+            15: "SMOKING NEAR GEAR.",
+            lower_title: "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!"
+        },
+        eng: {
+            title: "MEDICAL CONTRAINDICATIONS",
+            subtitle: "Most people can jump, but there are diseases that (with whom) you must be careful.",
+            1: "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
+            2: "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
+            3: "Respiratory system: asthma of mixed genesis.",
+            4: " (The) early postoperative period: first 3 months after surgery",
+            5: "Intracranial hypertension, epilepsy.",
+            6: "Thyrotoxicosis.",
+            7: "Pregnancy",
+            8: "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
+            9: "The omission of the kidneys of 2-3 degrees.",
+            10: "Strong nervous disorders.",
+            11: "Diabetes.",
+            12: "Coming to the event in a state of alcoholic, drug intoxication",
+            13: "FACE CONTROL.",
+            14: "Do not listen to / ignore the guidance of instructors",
+            15: "SMOKING NEAR GEAR.",
+            lower_title: "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!"
+        },
+        rus: {
+            title: "MEDICAL CONTRAINDICATIONS",
+            subtitle: "Most people can jump, but there are diseases that (with whom) you must be careful.",
+            1: "Musculoskeletal system: spinal injuries in the past, spinal surgery, herniated discs, 3 degrees scoliosis, congenital malformations of the spine.",
+            2: "The cardiovascular system: congenital and acquired malformations of the heart, pacemaker, rhythm disorders (arrhythmia), arterial hypertension, hypertension stage 2-3, heart failure.",
+            3: "Respiratory system: asthma of mixed genesis.",
+            4: " (The) early postoperative period: first 3 months after surgery",
+            5: "Intracranial hypertension, epilepsy.",
+            6: "Thyrotoxicosis.",
+            7: "Pregnancy",
+            8: "Psychiatric disorders in the acute stage: schizophrenia, MDS, etc.",
+            9: "The omission of the kidneys of 2-3 degrees.",
+            10: "Strong nervous disorders.",
+            11: "Diabetes.",
+            12: "Coming to the event in a state of alcoholic, drug intoxication",
+            13: "FACE CONTROL.",
+            14: "Do not listen to / ignore the guidance of instructors",
+            15: "SMOKING NEAR GEAR.",
+            lower_title: "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!"
+        }
+    }
+
+
+
+    return (
+        <div className='App'>
+            <Home/>
+        </div>
+    );
+};
 
 export default App;

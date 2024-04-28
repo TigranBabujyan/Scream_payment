@@ -1,0 +1,52 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background: url("../../public/background_mount_trees2.svg") no-repeat center ;
+    background-size: cover;
+}
+
+.body {
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: gold;
+    opacity: 70%;
+}
+
+.header {
+    font-size: 2rem;
+    color: crimson;
+}
+
+.language {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.checklist {
+
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.checkbox {
+    display: flex;
+}
+
+.aggreement_positioning {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
