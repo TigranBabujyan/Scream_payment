@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './index.css';
 import 'flag-icons/css/flag-icons.min.css';
@@ -12,6 +12,19 @@ const Home: React.FC = () => {
     const handleChangeLanguage = (lang: string) => {
         i18n.changeLanguage(lang)
     }
+
+
+    const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    useEffect(() => {
+        // This effect runs whenever the checkbox state changes
+        setIsButtonDisabled(!isCheckboxChecked);
+    }, [isCheckboxChecked]);
+
+    const handleCheckboxChange = (event: any) => {
+        setIsCheckboxChecked(event.target.checked);
+    };
     const checkbox = document.getElementById('myCheckbox') as HTMLInputElement;
     const button = document.getElementById('myButton') as HTMLButtonElement;
 
@@ -20,6 +33,7 @@ const Home: React.FC = () => {
             button.disabled = !checkbox.checked;
         });
     }
+
 
     const navigateToLink = () => {
         window.location.href = 'https://payment.paylink.am/?id=cWREbjZKQkxlZE1HMktna05ENTBXcFIzMjM0QkRqWEJCaDVIK2RnL3AzUDUreTVKczN6VStJZW5mSXRxQ01XYVVPd0dzRlREN2FzYUJrTUtOVGQ2ZXc9PQ';
@@ -47,7 +61,7 @@ const Home: React.FC = () => {
                     <div className="lower_title">{t("lower_title")}</div>
                     <div className="aggreement_positioning">
                         <div className='checkbox'>
-                            <input type="checkbox" id={"myCheckbox"}/>
+                            <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
                             <div className="agreement">{t("agreement")}</div>
                         </div>
                         <div onClick={navigateToLink}>
