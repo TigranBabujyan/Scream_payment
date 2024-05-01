@@ -41,22 +41,26 @@ const Home: React.FC = () => {
 
     return (
         <div className='main'>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <div className='body'>
                 <header className='header'>Scream Of Soul</header>
                 <div className='checklist'>
                     <div className='language'>
-                        <div/>
+                        <div className='empty'/>
                         <div className='lang_buttons'>
-                            <button className='button' onClick={() => handleChangeLanguage("am")}><span className="fi fi-am"/></button>
-                            <button className='button' onClick={() => handleChangeLanguage("en")}><span className="fi fi-gb-eng"/></button>
-                            <button className='button' onClick={() => handleChangeLanguage("ru")}><span className="fi fi-ru"/></button>
+                            <button className='button' onClick={() => handleChangeLanguage("am")}><span
+                                className="fi fi-am"/></button>
+                            <button className='button' onClick={() => handleChangeLanguage("en")}><span
+                                className="fi fi-gb-eng"/></button>
+                            <button className='button' onClick={() => handleChangeLanguage("ru")}><span
+                                className="fi fi-ru"/></button>
                         </div>
                     </div>
+                    <div className='checklist_title'>{t('title')}</div>
+                    <div className='checklist_subtitle'>{t('subtitle')}</div>
                     <ol>
-                        <div className='checklist_title'>{t('title')}</div>
-                        <div className='checklist_subtitle'>{t('subtitle')}</div>
                         <div className='list'>
-                            {Array.from({ length: 15 }, (_, i) => (
+                            {Array.from({length: 15}, (_, i) => (
                                 <li key={i}>{t(`list.${i + 1}`)}</li>
                             ))}
                         </div>
@@ -68,7 +72,7 @@ const Home: React.FC = () => {
                         <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
                         <div className="agreement">{t("agreement")}</div>
                     </div>
-                    <div onClick={navigateToLink}>
+                    <div className= 'submit' onClick={navigateToLink}>
                         <button id={'myButton'} disabled={true}>{t('submit')}</button>
                     </div>
                 </div>
