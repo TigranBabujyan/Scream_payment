@@ -9,7 +9,18 @@
     background-size: cover;
 }
 
+@keyframes easeInAnimationBody {
+    0% {
+        transform: translateY(200px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 .body {
+    animation: easeInAnimationBody 3s;
+    width: 70%;
     border-radius: 2rem;
     padding: 2rem;
     display: flex;
@@ -18,9 +29,20 @@
     background: rgba(212,175,55, 0.7);
 }
 
+@keyframes easeInAnimationHeader {
+    0% {
+        transform: translateY(-500px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 .header {
+    animation: easeInAnimationHeader 3s;
     font-size: 2rem;
-    color: crimson;
+    font-weight: bold;
+    color: lime;
 }
 
 .language {
@@ -28,7 +50,11 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: space-between;
+}
 
+.lang_buttons {
+    display: flex;
 }
 
 .checklist {
@@ -39,30 +65,50 @@
 .checklist_title {
     display: flex;
     align-items: center;
-
+    margin-bottom: 2rem;
+    font-weight: bold;
 }
 
 .checklist_subtitle {
-
+    font-weight: bold;
+    margin-bottom: 2rem;
 }
 
 .list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
+}
+
+.list li {
+    margin: 0.2rem 0;
+}
+
+.lower_title {
+    font-weight: bold;
+    margin: 2rem 0;
 }
 
 .checkbox {
     display: flex;
+    margin-right: 0.2rem;
 }
 
 .agreement_positioning {
     padding: 1rem;
     display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 
+.agreement {
+    display: flex;
+    margin-left: 0.5rem;
+}
+
 .button {
+    display: flex;
     background-color: rgba(0, 0, 0, 0.0);
     border: none;
     cursor: pointer;

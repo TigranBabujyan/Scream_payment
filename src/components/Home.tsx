@@ -45,9 +45,12 @@ const Home: React.FC = () => {
                 <header className='header'>Scream Of Soul</header>
                 <div className='checklist'>
                     <div className='language'>
-                        <button className='button' onClick={() => handleChangeLanguage("am")}><span className="fi fi-am"/></button>
-                        <button className='button' onClick={() => handleChangeLanguage("en")}><span className="fi fi-gb-eng"/></button>
-                        <button className='button' onClick={() => handleChangeLanguage("ru")}><span className="fi fi-ru"/></button>
+                        <div/>
+                        <div className='lang_buttons'>
+                            <button className='button' onClick={() => handleChangeLanguage("am")}><span className="fi fi-am"/></button>
+                            <button className='button' onClick={() => handleChangeLanguage("en")}><span className="fi fi-gb-eng"/></button>
+                            <button className='button' onClick={() => handleChangeLanguage("ru")}><span className="fi fi-ru"/></button>
+                        </div>
                     </div>
                     <ol>
                         <div className='checklist_title'>{t('title')}</div>
@@ -59,15 +62,14 @@ const Home: React.FC = () => {
                         </div>
                     </ol>
                     <div className="lower_title">{t("lower_title")}</div>
-                    <div className="aggreement_positioning">
-                        <div className='checkbox'>
-                            <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
-                            <div className="agreement">{t("agreement")}</div>
-                        </div>
-                        <div onClick={navigateToLink}>
-                             {/*There is a bug a active and not active button on a checkbox click!!!*/}
-                            <button id={'myButton'} disabled={true}>{t('submit')}</button>
-                        </div>
+                </div>
+                <div className="agreement_positioning">
+                    <div className='checkbox'>
+                        <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
+                        <div className="agreement">{t("agreement")}</div>
+                    </div>
+                    <div onClick={navigateToLink}>
+                        <button id={'myButton'} disabled={true}>{t('submit')}</button>
                     </div>
                 </div>
             </div>
