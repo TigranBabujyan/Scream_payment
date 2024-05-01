@@ -63,6 +63,7 @@
 }
 
 .checklist_title {
+    justify-content: space-around;
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
@@ -83,6 +84,7 @@
 
 .list li {
     margin: 0.2rem 0;
+    font-weight: normal;
 }
 
 .lower_title {
@@ -93,6 +95,7 @@
 .checkbox {
     display: flex;
     margin-right: 0.2rem;
+    align-items: center;
 }
 
 .agreement_positioning {
@@ -100,6 +103,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .agreement {
@@ -113,4 +117,34 @@
     border: none;
     cursor: pointer;
     color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        height: 160vh;
+    }
+
+    .list li {
+        font-size: 0.9rem;
+    }
+
+    .language {
+        justify-content: space-around;
+        margin: 1rem 0;
+
+    }
+    .empty{
+        display: none;
+    }
+    .agreement_positioning {
+        flex-direction: column;
+        margin-top: 0.3rem;
+    }
+    .submit {
+        margin-top: 1rem;
+    }
+    .button {
+        margin: 0 1rem
+    }
+
 }
