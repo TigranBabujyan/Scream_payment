@@ -51,7 +51,7 @@ const Home: React.FC = () => {
                             <button className='button' onClick={() => handleChangeLanguage("am")}><span
                                 className="fi fi-am"/></button>
                             <button className='button' onClick={() => handleChangeLanguage("en")}><span
-                                className="fi fi-gb-eng"/></button>
+                                className="fi fi-us"/></button>
                             <button className='button' onClick={() => handleChangeLanguage("ru")}><span
                                 className="fi fi-ru"/></button>
                         </div>
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
                         <div className="agreement">{t("agreement")}</div>
                     </div>
                     <div className= 'submit' onClick={navigateToLink}>
-                        <button id={'myButton'} disabled={true}>{t('submit')}</button>
+                        <button className='submit_button' id={'myButton'} disabled={true}>{t('submit')}</button>
                     </div>
                 </div>
             </div>
