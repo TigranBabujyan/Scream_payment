@@ -11,10 +11,10 @@
 
 @keyframes easeInAnimationBody {
     0% {
-        transform: translateY(200px);
+        transform: translateX(-200px);
     }
     100% {
-        transform: translateY(0px);
+        transform: translateX(0px);
     }
 }
 
@@ -109,6 +109,7 @@
 .agreement {
     display: flex;
     margin-left: 0.5rem;
+    font-weight: bold;
 }
 
 .button {
@@ -117,6 +118,16 @@
     border: none;
     cursor: pointer;
     color: white;
+}
+
+.submit_button {
+    border-radius: 1rem;
+    font-weight: bold;
+    height: 3rem;
+    width: 8rem;
+    font-size: 1rem;
+    border: none;
+    opacity: 70%;
 }
 
 @media only screen and (max-width: 600px) {
