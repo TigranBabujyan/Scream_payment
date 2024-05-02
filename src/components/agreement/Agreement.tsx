@@ -6,7 +6,7 @@ import 'flag-icons/css/flag-icons.min.css';
 import {useTranslation} from "react-i18next";
 
 
-const Home: React.FC = () => {
+const Agreement: React.FC = () => {
 
     const [t, i18n] = useTranslation("global")
     const handleChangeLanguage = (lang: string) => {
@@ -81,4 +81,4 @@ const Home: React.FC = () => {
     );
 };
 
-export default Home;
+export default Agreement;
