@@ -12,6 +12,7 @@
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "axios": "^1.6.8",
+    "firebase": "^10.11.1",
     "flag-icons": "^7.2.1",
     "googleapis": "^136.0.0",
     "i18next": "^23.11.2",
