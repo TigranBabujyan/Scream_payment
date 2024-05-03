@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes easeInAnimationHeader {
+    0% {
+        transform: translateY(-500px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.header {
+    animation: easeInAnimationHeader 3s;
+    font-size: 2rem;
+    font-weight: bold;
+    color: lime;
+    margin: 0 auto;
+}
+
+.wrap {
+    color: white;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+
+.event {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
