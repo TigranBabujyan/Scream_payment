@@ -4,7 +4,7 @@ import './index.css';
 import 'flag-icons/css/flag-icons.min.css';
 
 import {useTranslation} from "react-i18next";
-import axios from 'axios';
+import {google} from "googleapis";
 
 
 const SOSForm: React.FC = () => {
@@ -19,7 +19,6 @@ const SOSForm: React.FC = () => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
     useEffect(() => {
-        // This effect runs whenever the checkbox state changes
         setIsButtonDisabled(!isCheckboxChecked);
     }, [isCheckboxChecked]);
 
@@ -39,6 +38,8 @@ const SOSForm: React.FC = () => {
     const navigateToLink = () => {
         window.location.href = 'https://payment.paylink.am/?id=cWREbjZKQkxlZE1HMktna05ENTBXcFIzMjM0QkRqWEJCaDVIK2RnL3AzUDUreTVKczN6VStJZW5mSXRxQ01XYVVPd0dzRlREN2FzYUJrTUtOVGQ2ZXc9PQ';
     };
+
+
 
     return (
         <div className='main'>

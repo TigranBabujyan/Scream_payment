@@ -18,7 +18,6 @@ const Agreement: React.FC = () => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
     useEffect(() => {
-        // This effect runs whenever the checkbox state changes
         setIsButtonDisabled(!isCheckboxChecked);
     }, [isCheckboxChecked]);
 
