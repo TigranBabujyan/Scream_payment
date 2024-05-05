@@ -12,8 +12,9 @@ const App: React.FC = () => {
         <div className='App'>
             <Suspense fallback={<div>Loading... </div>}>
                 <Routes>
-                    <Route path="/" element={<SOSForm/>}>
-                    </Route>
+                    <Route path="/" element={<SOSForm/>}/>
+                    <Route path="/agreement" element={<Agreement/>}/>
+                    <Route path="/generacrac_tandzs" element={<Admin/>}/>
                 </Routes>
             </Suspense>
         </div>

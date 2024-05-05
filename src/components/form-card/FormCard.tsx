@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import {NewDataTypes} from "../../types/adminData";
+import {Link} from "react-router-dom";
 
 interface IProps {
     apiData: NewDataTypes
@@ -15,11 +16,11 @@ function  SOSFormCard({apiData}: IProps) {
                 <header>Event</header>
                 <form className='event'>
                     <div className="radio">
-                        <input type="radio" id='1st_event' name="fav_icon" value={`${apiData.event1}`}/>
+                        <input type="radio" id='1st_event' name="fav_icon" value={`${apiData.event1}`} required/>
                         <label htmlFor='1st_event'>{apiData.event1}</label>
                     </div>
                     <div className='radio'>
-                        <input type="radio" id='2nd_event' name="fav_icon" value={`${apiData.event2}`}/>
+                        <input type="radio" id='2nd_event' name="fav_icon" value={`${apiData.event2}`} required/>
                         <label htmlFor='2nd_event'>{apiData.event2}</label>
                     </div>
                     <div className='radio'>
@@ -78,6 +79,11 @@ function  SOSFormCard({apiData}: IProps) {
                         <label htmlFor='telegram'>{apiData.social6}</label>
                     </div>
                 </form>
+                <button>
+                    <Link to='agreement'>
+                        Next
+                    </Link>
+                </button>
             </div>
         </div>
     );
