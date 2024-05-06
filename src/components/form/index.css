@@ -46,16 +46,3 @@
     color: lime;
     margin: 0 auto;
 }
-
-.form_card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-.event {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
