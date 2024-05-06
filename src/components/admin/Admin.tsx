@@ -20,6 +20,9 @@ const Admin: React.FC = () => {
     const [social4, setSocial4] = useState('')
     const [social5, setSocial5] = useState('')
     const [social6, setSocial6] = useState('')
+    const [keyForEvent1, setKeyForEvent1] = useState('')
+    const [keyForEvent2, setKeyForEvent2] = useState('')
+    const [keyForEvent3, setKeyForEvent3] = useState('')
 
     const navigate = useNavigate()
     const changeEventDetails = (e: React.FormEvent<HTMLFormElement>) => {
@@ -36,9 +39,12 @@ const Admin: React.FC = () => {
             social3: social3,
             social4: social4,
             social5: social5,
-            social6: social6
-
+            social6: social6,
+            keyForEvent1: keyForEvent1,
+            keyForEvent2: keyForEvent2,
+            keyForEvent3: keyForEvent3
         })
+
         console.log('successfully changed')
         navigate('/')
     }
@@ -47,7 +53,6 @@ const Admin: React.FC = () => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <div className='body'>
                 <form onSubmit={(e) => changeEventDetails(e)}>
-
                     <header className='header'>Scream Of Soul</header>
                     <header className='header'>Admin</header>
                     <div className='wrap'>
@@ -104,8 +109,8 @@ const Admin: React.FC = () => {
                             </div>
                         </form>
                     </div>
-                    <div className='wrap'>
-                        <header>Number</header>
+                    <div className='input'>
+                        <label>Number</label>
                         <form onSubmit={(e) => changeEventDetails(e)}>
                             <input
                                 type="number"
@@ -117,7 +122,7 @@ const Admin: React.FC = () => {
                             />
                         </form>
                     </div>
-                    <div className='wrap'>
+                    <div className='input'>
                         <header>How you know about us</header>
                         <form onSubmit={(e) => changeEventDetails(e)}>
                             <div className='input'>
@@ -190,6 +195,15 @@ const Admin: React.FC = () => {
                                     onChange={(e) => setSocial6(e.target.value)}
                                 />
                             </div>
+                        </form>
+                        <form className='keyEvent_wrap'>
+                            <header>Input url to make buttons work!</header>
+                            <input placeholder='event:1 url' onChange={(e) => setKeyForEvent1(e.target.value)}
+                                   type='text'/>
+                            <input placeholder='event:2 url' onChange={(e) => setKeyForEvent2(e.target.value)}
+                                   type='text'/>
+                            <input placeholder='event:3 url' onChange={(e) => setKeyForEvent3(e.target.value)}
+                                   type='text'/>
                         </form>
                     </div>
                     <button type='submit'>SAVE</button>

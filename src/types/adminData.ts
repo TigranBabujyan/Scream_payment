@@ -12,4 +12,9 @@ export interface NewDataTypes {
     social6?: string;
     social_header?: string;
     transfer?: string;
+    name?: string;
+    surname?: string;
+    keyForEvent1?: string;
+    keyForEvent2?: string;
+    keyForEvent3?: string
 }

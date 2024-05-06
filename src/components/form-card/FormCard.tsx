@@ -8,13 +8,21 @@ interface IProps {
 }
 
 function  SOSFormCard({apiData}: IProps) {
-    console.log(apiData, 'data from api')
 
     return (
-        <div className='main'>
+        <div className='main_wrap'>
             <div className='event_body'>
-                <header>Event</header>
+                <h1>Event</h1>
                 <form className='event'>
+                    <div className="input">
+                        <h4>Name/Имя/Անուն</h4>
+                        <input type="text" id='name' name="fav_icon" placeholder='Enter Your Name'/>
+                    </div>
+                    <div className="input">
+                        <h4>Surname/Фамилия/Ազգանուն</h4>
+                        <input type="text" id='surname' name="fav_icon" placeholder='Enter Your Surname'/>
+                        <label htmlFor='surname'>{apiData.surname}</label>
+                    </div>
                     <div className="radio">
                         <input type="radio" id='1st_event' name="fav_icon" value={`${apiData.event1}`} required/>
                         <label htmlFor='1st_event'>{apiData.event1}</label>
@@ -31,7 +39,7 @@ function  SOSFormCard({apiData}: IProps) {
             </div>
             <div className='line'/>
             <div className='transfer_body'>
-                <header>{apiData.transfer}</header>
+                <h4>{apiData.transfer}</h4>
                 <form>
                     <div className='radio'>
                         <input type="radio" id='transfer_yes' name="fav_icon" value="YES"/>
@@ -45,7 +53,7 @@ function  SOSFormCard({apiData}: IProps) {
             </div>
             <div className='line'/>
             <div className='number'>
-                <header>{apiData.number}</header>
+                <h4>{apiData.number}</h4>
                 <form>
                     <input type='number'></input>
                 </form>
@@ -87,6 +95,6 @@ function  SOSFormCard({apiData}: IProps) {
             </div>
         </div>
     );
-};
+}
 
 export default SOSFormCard;
