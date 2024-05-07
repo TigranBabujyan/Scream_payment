@@ -3,7 +3,7 @@ export interface NewDataTypes {
     event2?: string;
     event3?: string;
     id?: string;
-    number?: number;
+    number_title?: number;
     social1?: string;
     social2?: string;
     social3?: string;
@@ -16,5 +16,6 @@ export interface NewDataTypes {
     surname?: string;
     keyForEvent1?: string;
     keyForEvent2?: string;
-    keyForEvent3?: string
+    keyForEvent3?: string;
+    email_title?: string
 }

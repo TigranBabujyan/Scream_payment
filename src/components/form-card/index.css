@@ -46,18 +46,6 @@
     color: lime;
 }
 
-.line {
-    margin: .5rem 0;
-    height: 1px;
-    background-color: lime;
-    width: 100%;
-    align-items: center;
-    align-self: center;
-}
-
-.number {
-    padding: 1rem;
-}
 
 .title {
     margin: 0 auto;
