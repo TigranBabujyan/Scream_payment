@@ -27,23 +27,26 @@ const Admin: React.FC = () => {
     const navigate = useNavigate()
     const changeEventDetails = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        editData('admin_input',{
-            event1: event1,
-            event2: event2,
-            event3: event3,
-            transfer: transfer,
-            number: number,
-            social_title: social_title,
-            social1: social1,
-            social2: social2,
-            social3: social3,
-            social4: social4,
-            social5: social5,
-            social6: social6,
-            keyForEvent1: keyForEvent1,
-            keyForEvent2: keyForEvent2,
-            keyForEvent3: keyForEvent3
-        })
+
+        let data: any= {}
+
+        if(event1) data.event1 = event1
+        if(event2) data.event2 = event2
+        if(event3) data.event3 = event3
+        if(transfer) data.transfer = transfer
+        if(number) data.number = number
+        if(social_title) data.social_title = social_title
+        if(social1) data.social1 = social1
+        if(social2) data.social2 = social2
+        if(social3) data.social3 = social3
+        if(social4) data.social4 = social4
+        if(social5) data.social5 = social5
+        if(social6) data.social6 = social6
+        if(keyForEvent1) data.keyForEvent1 = keyForEvent1
+        if(keyForEvent2) data.keyForEvent2 = keyForEvent2
+        if(keyForEvent3) data.keyForEvent3 = keyForEvent3
+
+        editData('admin_input', data)
 
         console.log('successfully changed')
         navigate('/')
@@ -110,10 +113,10 @@ const Admin: React.FC = () => {
                         </form>
                     </div>
                     <div className='input'>
-                        <label>Number</label>
+                        <label>Number Details</label>
                         <form onSubmit={(e) => changeEventDetails(e)}>
                             <input
-                                type="number"
+                                type="string"
                                 value={number}
                                 id='number'
                                 placeholder='Input Event Details'

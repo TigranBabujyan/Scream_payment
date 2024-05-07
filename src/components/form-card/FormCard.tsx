@@ -14,15 +14,7 @@ function  SOSFormCard({apiData}: IProps) {
             <div className='event_body'>
                 <h1>Event</h1>
                 <form className='event'>
-                    <div className="input">
-                        <h4>Name/Имя/Անուն</h4>
-                        <input type="text" id='name' name="fav_icon" placeholder='Enter Your Name'/>
-                    </div>
-                    <div className="input">
-                        <h4>Surname/Фамилия/Ազգանուն</h4>
-                        <input type="text" id='surname' name="fav_icon" placeholder='Enter Your Surname'/>
-                        <label htmlFor='surname'>{apiData.surname}</label>
-                    </div>
+                    <div className='title'>Event Details</div>
                     <div className="radio">
                         <input type="radio" id='1st_event' name="fav_icon" value={`${apiData.event1}`} required/>
                         <label htmlFor='1st_event'>{apiData.event1}</label>
@@ -39,7 +31,7 @@ function  SOSFormCard({apiData}: IProps) {
             </div>
             <div className='line'/>
             <div className='transfer_body'>
-                <h4>{apiData.transfer}</h4>
+                <div className='title'>{apiData.transfer}</div>
                 <form>
                     <div className='radio'>
                         <input type="radio" id='transfer_yes' name="fav_icon" value="YES"/>
@@ -52,15 +44,8 @@ function  SOSFormCard({apiData}: IProps) {
                 </form>
             </div>
             <div className='line'/>
-            <div className='number'>
-                <h4>{apiData.number}</h4>
-                <form>
-                    <input type='number'></input>
-                </form>
-            </div>
-            <div className='line'/>
             <div className='social'>
-                <header>{apiData.social_header}</header>
+                <div className='title'>{apiData.social_header}</div>
                 <form>
                     <div className='radio'>
                         <input type="radio" id='instagram' name="fav_icon" value={`${apiData.social1}`}/>
@@ -85,6 +70,25 @@ function  SOSFormCard({apiData}: IProps) {
                     <div className='radio'>
                         <input type="radio" id='telegram' name="fav_icon" value={`${apiData.social6}`}/>
                         <label htmlFor='telegram'>{apiData.social6}</label>
+                    </div>
+                    <div className='line'/>
+                    <div className="input">
+                        <div className='title'>Name/Имя/Անուն</div>
+                        <input type="text" id='name' name="fav_icon" placeholder='Enter Your Name' required/>
+                        <label htmlFor='surname'>{apiData.name}</label>
+                    </div>
+                    <div className='line'/>
+                    <div className="input">
+                        <div className='title'>Surname/Фамилия/Ազգանուն</div>
+                        <input type="text" id='surname' name="fav_icon" placeholder='Enter Your Surname' required/>
+                        <label htmlFor='surname'>{apiData.surname}</label>
+                    </div>
+                    <div className='line'/>
+                    <div className='number'>
+                        <form>
+                            <div className='title'>{apiData.number}</div>
+                            <input type='text' id='number'/>
+                        </form>
                     </div>
                 </form>
                 <button>
