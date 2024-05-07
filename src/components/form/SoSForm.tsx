@@ -13,6 +13,7 @@ import SOSFormCard from "../form-card/FormCard";
 const SOSForm: React.FC = () => {
 
     const [apiData, setApiData] = useState<NewDataTypes []>([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => onSnapshot(adminData, (snapshot: QuerySnapshot<DocumentData>)=> {
             setApiData(
@@ -23,10 +24,15 @@ const SOSForm: React.FC = () => {
                     }
                 }),
             )
+            setLoading(false);
         }),
         []
     );
-
+    if(loading){
+        return (
+            <div>Loading...</div>
+        )
+    }
     return (
         <div className='main'>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

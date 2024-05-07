@@ -15,6 +15,7 @@ function  SOSFormCard({apiData}: IProps) {
     const [selectedSurname, setSelectedSurname] = useState('')
     const [selectedSocial, setSelectedSocial] = useState('')
     const [selectedNumber, setSelectedNumber] = useState('')
+    const [selectedEmail, setSelectedEmail] = useState('')
     const handleRadioChangeEvent = (e: any) => {
          setSelectedEvent(e.target.value)
         console.log (selectedEvent, 'selected event')
@@ -38,6 +39,11 @@ function  SOSFormCard({apiData}: IProps) {
     const handleRadioChangeNumber = (e: any) => {
         setSelectedNumber(e.target.value)
         console.log (selectedNumber, 'selected Number')
+    }
+
+    const handleRadioChangeEmail = (e: any) => {
+        setSelectedEmail(e.target.value)
+        console.log (selectedEmail, 'selected Email')
     }
 
     return (
@@ -108,18 +114,28 @@ function  SOSFormCard({apiData}: IProps) {
                 <form>
                     <div className="input">
                         <div className='title'>Name/Имя/Անուն</div>
-                        <input type="text" id='name' name="fav_icon" placeholder='Enter Your Name' required onChange={handleRadioChangeName}/>
+                        <input type="text" id='name' name="fav_icon" placeholder='Enter Your Name' required
+                               onChange={handleRadioChangeName}/>
                         <label htmlFor='surname'>{apiData.name}</label>
                     </div>
                     <div className="input">
                         <div className='title'>Surname/Фамилия/Ազգանուն</div>
-                        <input type="text" id='surname' name="fav_icon" placeholder='Enter Your Surname' required onChange={handleRadioChangeSurname}/>
+                        <input type="text" id='surname' name="fav_icon" placeholder='Enter Your Surname' required
+                               onChange={handleRadioChangeSurname}/>
                         <label htmlFor='surname'>{apiData.surname}</label>
                     </div>
                     <div className='number'>
                         <form>
-                            <div className='title'>{apiData.number}</div>
-                            <input type='text' id='number' placeholder='Enter Your Number!' onChange={handleRadioChangeNumber}/>
+                            <div className='title'>{apiData.number_title}</div>
+                            <input type='text' id='number' placeholder='Enter Your Number!'
+                                   onChange={handleRadioChangeNumber}/>
+                        </form>
+                    </div>
+                    <div className='email'>
+                        <form>
+                            <div className='title'>{apiData.email_title}</div>
+                            <input type='text' id='number' placeholder='Enter Your Number!'
+                                   onChange={handleRadioChangeEmail}/>
                         </form>
                     </div>
                 </form>
