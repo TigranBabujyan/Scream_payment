@@ -23,4 +23,29 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
 }
+
+
+.event_body {
+    color: lime;
+}
+
+.line {
+    margin: .5rem 0;
+    height: 1px;
+    background-color: lime;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+}
+
+.number {
+    padding: 1rem;
+}
+
+.title {
+    margin: 0 auto;
+    padding: .5rem;
+    font-weight: bold;
+    }
