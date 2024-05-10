@@ -15,7 +15,9 @@ export interface NewDataTypes {
     name?: string;
     surname?: string;
     keyForEvent1?: string;
+    keyForEvent1Transfer?: string;
     keyForEvent2?: string;
+    keyForEvent2Transfer?: string;
     keyForEvent3?: string;
     email_title?: string
 }

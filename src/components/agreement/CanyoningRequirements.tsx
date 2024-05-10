@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import {useTranslation} from "react-i18next";
 
 import './index.css';
 import 'flag-icons/css/flag-icons.min.css';
+import selectedTransfer from '../form-card/FormCard';
 
-import {useTranslation} from "react-i18next";
-
-
-const Agreement: React.FC = () => {
+const CanyoningRequirements: React.FC = () => {
 
     const [t, i18n] = useTranslation("global")
     const handleChangeLanguage = (lang: string) => {
@@ -44,8 +43,8 @@ const Agreement: React.FC = () => {
             <div className='body'>
                 <header className='header'>Scream Of Soul</header>
                 <div className='checklist'>
+                    {/*Need to replace buttons to the same line with header*/}
                     <div className='language'>
-                        <div className='empty'/>
                         <div className='lang_buttons'>
                             <button className='button' onClick={() => handleChangeLanguage("am")}><span
                                 className="fi fi-am"/></button>
@@ -55,16 +54,27 @@ const Agreement: React.FC = () => {
                                 className="fi fi-ru"/></button>
                         </div>
                     </div>
-                    <div className='checklist_title'>{t('rope_jumping_agreement.title')}</div>
-                    <div className='checklist_subtitle'>{t('rope_jumping_agreement.subtitle')}</div>
+                    <div className='checklist_title'>{t('canyoning_requirements.title')}</div>
+                    <div className='checklist_subtitle'>{t('canyoning_requirements.subtitle')}</div>
                     <ol>
                         <div className='list'>
-                            {Array.from({length: 15}, (_, i) => (
-                                <li key={i}>{t(`rope_jumping_agreement.list.${i + 1}`)}</li>
+                            {Array.from({length: 7}, (_, i) => (
+                                <li key={i}>{t(`canyoning_requirements.list1.${i + 1}`)}</li>
                             ))}
                         </div>
                     </ol>
-                    <div className="lower_title">{t("lower_title")}</div>
+                    <div className='price_includes_wrap'>
+                        <div className="includes_title">{t("canyoning_requirements.title2")}</div>
+                        <div className="price_includes">{t("canyoning_requirements.sub1")}</div>
+                        <div className="price_includes">{t("canyoning_requirements.sub2")}</div>
+                    </div>
+                    <ol>
+                        <div className='list'>
+                            {Array.from({length:4}, (_, i) => (
+                                <li key={i}>{t(`canyoning_requirements.list2.${i + 1}`)}</li>
+                            ))}
+                        </div>
+                    </ol>
                 </div>
                 <div className="agreement_wrap">
                     <div className='checkbox'>
@@ -80,4 +90,4 @@ const Agreement: React.FC = () => {
     );
 };
 
-export default Agreement;
+export default CanyoningRequirements;
