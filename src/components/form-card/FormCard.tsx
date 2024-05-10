@@ -16,6 +16,7 @@ function  SOSFormCard({apiData}: IProps) {
     const [selectedSocial, setSelectedSocial] = useState('')
     const [selectedNumber, setSelectedNumber] = useState('')
     const [selectedEmail, setSelectedEmail] = useState('')
+    const [selectedUrl, setSelectedUrl] = useState('')
     const handleRadioChangeEvent = (e: any) => {
          setSelectedEvent(e.target.value)
         console.log (selectedEvent, 'selected event')
@@ -140,7 +141,7 @@ function  SOSFormCard({apiData}: IProps) {
                     </div>
                 </form>
                 <button>
-                    <Link to='agreement'>
+                    <Link to={`${selectedEvent===apiData.event1? '/requirements' : '/agreement'}`}>
                         Next
                     </Link>
                 </button>

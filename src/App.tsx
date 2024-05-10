@@ -1,11 +1,12 @@
 import React, {Suspense} from 'react';
 import './App.css';
 import Agreement from "./components/agreement/Agreement";
+import CanyoningRequirements from "./components/agreement/CanyoningRequirements";
+
 import SOSForm from "./components/form/SoSForm";
 
 import Admin from "./components/admin/Admin";
-
-import {Link, Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 const App: React.FC = () => {
 
     return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/" element={<SOSForm/>}/>
                     <Route path="/agreement" element={<Agreement/>}/>
+                    <Route path="/requirements" element={<CanyoningRequirements/>}/>
                     <Route path="/generacrac_tandzs" element={<Admin/>}/>
                 </Routes>
             </Suspense>
