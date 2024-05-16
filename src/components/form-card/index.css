@@ -59,3 +59,7 @@
     margin: 1rem;
     padding: 1rem;
 }
+
+.input_text {
+    border: none
+}

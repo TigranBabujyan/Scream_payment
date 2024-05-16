@@ -4,9 +4,10 @@ import './index.css';
 import 'flag-icons/css/flag-icons.min.css';
 
 import {useTranslation} from "react-i18next";
+import {NewDataTypes} from "../../types/adminData";
 
 
-const Agreement: React.FC = () => {
+const Agreement: React.FC  = () => {
 
     const [t, i18n] = useTranslation("global")
     const handleChangeLanguage = (lang: string) => {
@@ -33,10 +34,24 @@ const Agreement: React.FC = () => {
         });
     }
 
+    const [apiData, setApiData] = useState<NewDataTypes []>([])
+    const [buttonUrl, setButtonUrl] = useState('')
 
-    const navigateToLink = () => {
-        window.location.href = 'https://payment.paylink.am/?id=cWREbjZKQkxlZE1HMktna05ENTBXcFIzMjM0QkRqWEJCaDVIK2RnL3AzUDUreTVKczN6VStJZW5mSXRxQ01XYVVPd0dzRlREN2FzYUJrTUtOVGQ2ZXc9PQ';
-    };
+    useEffect(() => {
+        if(apiData[0]) {
+            if(apiData[0].transfer_answer){
+                if(apiData[0].keyForEvent2Transfer){
+                    setButtonUrl(apiData[0].keyForEvent2Transfer)
+                }
+            }
+            if(!apiData[0].transfer_answer){
+                if(apiData[0].keyForEvent2){
+                    setButtonUrl(apiData[0].keyForEvent2)
+                }
+            }
+        }
+    }, [apiData]);
+
 
     return (
         <div className='main'>
@@ -64,16 +79,17 @@ const Agreement: React.FC = () => {
                             ))}
                         </div>
                     </ol>
-                    <div className="lower_title">{t("lower_title")}</div>
+                    <div className="lower_title">{t("rope_jumping_agreement.lower_title")}</div>
                 </div>
                 <div className="agreement_wrap">
                     <div className='checkbox'>
                         <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
                         <div className="agreement">{t("agreement")}</div>
                     </div>
-                    <div className= 'submit' onClick={navigateToLink}>
+                    <div className= 'submit' onClick={() => buttonUrl}>
                         <button className='submit_button' id={'myButton'} disabled={true}>{t('submit')}</button>
                     </div>
+                    
                 </div>
             </div>
         </div>
