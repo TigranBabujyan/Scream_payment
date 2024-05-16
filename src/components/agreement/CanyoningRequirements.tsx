@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 
 import './index.css';
 import 'flag-icons/css/flag-icons.min.css';
-import selectedTransfer from '../form-card/FormCard';
+import {NewDataTypes} from "../../types/adminData";
 
 const CanyoningRequirements: React.FC = () => {
 
@@ -32,10 +32,24 @@ const CanyoningRequirements: React.FC = () => {
         });
     }
 
+    const [apiData, setApiData] = useState<NewDataTypes []>([])
+    const [buttonUrl, setButtonUrl] = useState('')
 
-    const navigateToLink = () => {
-        window.location.href = 'https://payment.paylink.am/?id=cWREbjZKQkxlZE1HMktna05ENTBXcFIzMjM0QkRqWEJCaDVIK2RnL3AzUDUreTVKczN6VStJZW5mSXRxQ01XYVVPd0dzRlREN2FzYUJrTUtOVGQ2ZXc9PQ';
-    };
+    useEffect(() => {
+        if(apiData[0]) {
+            if(apiData[0].transfer_answer){
+                if(apiData[0].keyForEvent1Transfer){
+                    setButtonUrl(apiData[0].keyForEvent1Transfer)
+                }
+            }
+            if(!apiData[0].transfer_answer){
+                if(apiData[0].keyForEvent1){
+                    setButtonUrl(apiData[0].keyForEvent1)
+                }
+            }
+        }
+    }, [apiData]);
+
 
     return (
         <div className='main'>
@@ -81,7 +95,7 @@ const CanyoningRequirements: React.FC = () => {
                         <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
                         <div className="agreement">{t("agreement")}</div>
                     </div>
-                    <div className= 'submit' onClick={navigateToLink}>
+                    <div className= 'submit' onClick={()=> window.location.href = `${buttonUrl}`}>
                         <button className='submit_button' id={'myButton'} disabled={true}>{t('submit')}</button>
                     </div>
                 </div>

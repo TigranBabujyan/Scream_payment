@@ -19,5 +19,6 @@ export interface NewDataTypes {
     keyForEvent2?: string;
     keyForEvent2Transfer?: string;
     keyForEvent3?: string;
-    email_title?: string
+    email_title?: string;
+    transfer_answer?: boolean
 }

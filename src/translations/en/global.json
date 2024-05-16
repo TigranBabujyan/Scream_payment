@@ -18,7 +18,8 @@
             "13": "FACE CONTROL.",
             "14": "Do not listen to / ignore the guidance of instructors",
             "15": "SMOKING NEAR GEAR."
-        }
+        },
+        "lower_title": "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!"
     },
     "canyoning_requirements": {
         "title": "blah blah eng",
@@ -35,7 +36,6 @@
         "": "",
         "": ""
     },
-    "lower_title": "Remember, that organizers can't visually assess your physical and psychological health, you're responsible for your jump!",
     "agreement": "I reed and acknowledge.",
     "submit": "Next"
 }
