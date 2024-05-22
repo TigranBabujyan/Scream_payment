@@ -53,8 +53,6 @@ function  SOSFormCard({apiData, submit, agreement}: IProps) {
         }
     }
 
-
-
     return (
         <div className="agreement_wrap">
             <div className='checkbox'>
