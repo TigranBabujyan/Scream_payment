@@ -35,17 +35,21 @@ function  SOSFormCard({apiData, submit, agreement}: IProps) {
 
 
     const handleUrl = () => {
-        if (apiData.transfer_answer === "YES" && window.location.href.includes('/requirements')) {
-            navigate(`${apiData.keyForEvent1Transfer}`)
-        }
-        if (apiData.transfer_answer === "NO" && window.location.href.includes('/requirements')) {
-            navigate( `${apiData.keyForEvent1}`)
-        }
-        if (apiData.transfer_answer === "YES" && window.location.href.includes('/agreement')) {
-            navigate(`${apiData.keyForEvent2Transfer}`)
-        }
-        if (apiData.transfer_answer === "NO" && window.location.href.includes('/agreement')) {
-            navigate(`${apiData.keyForEvent2}`)
+        if (!isButtonDisabled){
+            if (apiData.transfer_answer === "YES" && window.location.href.includes('/requirements')) {
+                navigate(`${apiData.keyForEvent1Transfer}`)
+            }
+            if (apiData.transfer_answer === "NO" && window.location.href.includes('/requirements')) {
+                navigate( `${apiData.keyForEvent1}`)
+            }
+            if (apiData.transfer_answer === "YES" && window.location.href.includes('/agreement')) {
+                navigate(`${apiData.keyForEvent2Transfer}`)
+            }
+            if (apiData.transfer_answer === "NO" && window.location.href.includes('/agreement')) {
+                navigate(`${apiData.keyForEvent2}`)
+            }
+        }else {
+            alert('Please read and agree with terms')
         }
     }
 
@@ -58,7 +62,7 @@ function  SOSFormCard({apiData, submit, agreement}: IProps) {
                 <div className="agreement">{agreement}</div>
             </div>
             <div className='submit'>
-                <button onClick={handleUrl} className='submit_button' id={'myButton'} disabled={true}>
+                <button onClick={handleUrl} className='submit_button' id={'myButton'} disabled={isButtonDisabled}>
                     {submit}
                 </button>
             </div>
