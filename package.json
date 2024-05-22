@@ -11,6 +11,7 @@
     "@types/node": "^16.18.94",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
+    "antd": "^5.17.3",
     "axios": "^1.6.8",
     "firebase": "^10.11.1",
     "flag-icons": "^7.2.1",

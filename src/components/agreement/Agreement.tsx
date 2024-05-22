@@ -5,6 +5,9 @@ import 'flag-icons/css/flag-icons.min.css';
 
 import {useTranslation} from "react-i18next";
 import {NewDataTypes} from "../../types/adminData";
+import ButtonUrl from "../Button/ButtonUrl";
+import {DocumentData, onSnapshot, QuerySnapshot} from "firebase/firestore";
+import {adminData} from "../../lib/controller";
 
 
 const Agreement: React.FC  = () => {
@@ -15,42 +18,40 @@ const Agreement: React.FC  = () => {
     }
 
 
-    const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
-    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-
-    useEffect(() => {
-        setIsButtonDisabled(!isCheckboxChecked);
-    }, [isCheckboxChecked]);
-
-    const handleCheckboxChange = (event: any) => {
-        setIsCheckboxChecked(event.target.checked);
-    };
-    const checkbox = document.getElementById('myCheckbox') as HTMLInputElement;
-    const button = document.getElementById('myButton') as HTMLButtonElement;
-
-    if (checkbox && button) {
-        checkbox.addEventListener('change', () => {
-            button.disabled = !checkbox.checked;
-        });
-    }
+    // const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+    // const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+    //
+    // useEffect(() => {
+    //     setIsButtonDisabled(!isCheckboxChecked);
+    // }, [isCheckboxChecked]);
+    //
+    // const handleCheckboxChange = (event: any) => {
+    //     setIsCheckboxChecked(event.target.checked);
+    // };
+    // const checkbox = document.getElementById('myCheckbox') as HTMLInputElement;
+    // const button = document.getElementById('myButton') as HTMLButtonElement;
+    //
+    // if (checkbox && button) {
+    //     checkbox.addEventListener('change', () => {
+    //         button.disabled = !checkbox.checked;
+    //     });
+    // }
 
     const [apiData, setApiData] = useState<NewDataTypes []>([])
-    const [buttonUrl, setButtonUrl] = useState('')
 
-    useEffect(() => {
-        if(apiData[0]) {
-            if(apiData[0].transfer_answer){
-                if(apiData[0].keyForEvent2Transfer){
-                    setButtonUrl(apiData[0].keyForEvent2Transfer)
-                }
-            }
-            if(!apiData[0].transfer_answer){
-                if(apiData[0].keyForEvent2){
-                    setButtonUrl(apiData[0].keyForEvent2)
-                }
-            }
-        }
-    }, [apiData]);
+
+    useEffect(() => onSnapshot(adminData, (snapshot: QuerySnapshot<DocumentData>)=> {
+            setApiData(
+                snapshot.docs.map((doc)=>{
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                }),
+            )
+        }),
+        []
+    );
 
 
     return (
@@ -81,15 +82,16 @@ const Agreement: React.FC  = () => {
                     </ol>
                     <div className="lower_title">{t("rope_jumping_agreement.lower_title")}</div>
                 </div>
-                <div className="agreement_wrap">
-                    <div className='checkbox'>
-                        <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
-                        <div className="agreement">{t("agreement")}</div>
-                    </div>
-                    <div className= 'submit' onClick={() => buttonUrl}>
-                        <button className='submit_button' id={'myButton'} disabled={true}>{t('submit')}</button>
-                    </div>
-                    
+                <div className='width_test'>
+                    {apiData && apiData.length ? (
+                        <div>
+                            {
+                                apiData?.map((apiData)=>
+                                    <ButtonUrl agreement= {t('agreement')} submit={t('submit')} apiData={apiData}/>
+                                )
+                            }
+                        </div>
+                    ): (<div/>)}
                 </div>
             </div>
         </div>
