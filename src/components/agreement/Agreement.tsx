@@ -17,27 +17,8 @@ const Agreement: React.FC  = () => {
         i18n.changeLanguage(lang)
     }
 
-
-    // const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
-    // const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-    //
-    // useEffect(() => {
-    //     setIsButtonDisabled(!isCheckboxChecked);
-    // }, [isCheckboxChecked]);
-    //
-    // const handleCheckboxChange = (event: any) => {
-    //     setIsCheckboxChecked(event.target.checked);
-    // };
-    // const checkbox = document.getElementById('myCheckbox') as HTMLInputElement;
-    // const button = document.getElementById('myButton') as HTMLButtonElement;
-    //
-    // if (checkbox && button) {
-    //     checkbox.addEventListener('change', () => {
-    //         button.disabled = !checkbox.checked;
-    //     });
-    // }
-
     const [apiData, setApiData] = useState<NewDataTypes []>([])
+    const [loading, setLoading] = useState(true)
 
 
     useEffect(() => onSnapshot(adminData, (snapshot: QuerySnapshot<DocumentData>)=> {
@@ -48,10 +29,11 @@ const Agreement: React.FC  = () => {
                         ...doc.data()
                     }
                 }),
-            )
+        )
+            setLoading(false);
+
         }),
-        []
-    );
+        []);
 
 
     return (

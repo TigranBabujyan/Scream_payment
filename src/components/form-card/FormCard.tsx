@@ -68,6 +68,7 @@ function  SOSFormCard({apiData}: IProps) {
         } catch (error) {
             console.error("Error updating document: ", error);
         }
+        handleSubmit()
     };
 
 
