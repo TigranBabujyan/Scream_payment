@@ -3,6 +3,8 @@ import './index.css'
 import {NewDataTypes} from "../../types/adminData";
 import {Link} from "react-router-dom";
 import {editData} from '../../lib/controller'
+import {useNavigate} from "react-router-dom";
+
 
 
 interface IProps {
@@ -14,19 +16,19 @@ interface IProps {
 function  SOSFormCard({apiData}: IProps) {
 
     const [selectedEvent, setSelectedEvent] = useState('')
-    const [selectedTransfer, setSelectedTransfer] = useState('')
+    const [transferAnswer, setTransferAnswer] = useState('')
     const [selectedName, setSelectedName] = useState('')
     const [selectedSurname, setSelectedSurname] = useState('')
     const [selectedSocial, setSelectedSocial] = useState('')
     const [selectedNumber, setSelectedNumber] = useState('')
     const [selectedEmail, setSelectedEmail] = useState('')
+
+    const navigate = useNavigate()
+
+
     const handleRadioChangeEvent = (e: any) => {
          setSelectedEvent(e.target.value)
         console.log (selectedEvent, 'selected event')
-    }
-    const handleRadioChangeTransfer = (e: any) => {
-        setSelectedTransfer(e.target.value)
-        console.log (selectedTransfer, 'selected transfer')
     }
     const handleRadioChangeSocial = (e: any) => {
         setSelectedSocial(e.target.value)
@@ -50,17 +52,24 @@ function  SOSFormCard({apiData}: IProps) {
         console.log (selectedEmail, 'selected Email')
     }
 
-    const changeEventDetails = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = () => {
+        navigate(`${selectedEvent === apiData.event1 ? '/requirements' : '/agreement'}`)
+    }
+    const changeEventDetails = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         let data: any= {}
 
-        if(selectedTransfer === 'YES') data.transfer_answer = true
-        if(selectedTransfer === 'NO') data.transfer_answer = false
+        if(transferAnswer) data.transfer_answer = transferAnswer
 
+        try {
+            await editData('admin_input', data)
+            console.log('successfully changed')
+        } catch (error) {
+            console.error("Error updating document: ", error);
+        }
+    };
 
-        editData('admin_input', data)
-    }
 
     return (
         <div className='main_wrap'>
@@ -93,12 +102,16 @@ function  SOSFormCard({apiData}: IProps) {
                     <form>
                         <div className='radio'>
                             <input type="radio" id='transfer_yes' name="fav_icon" value="YES"
-                                   onChange={handleRadioChangeTransfer}/>
+                                   onChange={() => {
+                                       setTransferAnswer("YES")
+                                   }}/>
                             <label htmlFor='transfer_yes'>YES</label>
                         </div>
                         <div className='radio'>
                             <input type="radio" id='transfer_no' name="fav_icon" value="NO"
-                                   onChange={handleRadioChangeTransfer}/>
+                                   onChange={() => {
+                                       setTransferAnswer("NO")
+                                   }}/>
                             <label htmlFor='transfer_no'>NO</label>
                         </div>
                     </form>
@@ -169,12 +182,10 @@ function  SOSFormCard({apiData}: IProps) {
                             </form>
                         </div>
                     </form>
-                    <button type='submit'>
-                        <Link to={`${selectedEvent === apiData.event1 ? '/requirements' : '/agreement'}`}>
-                            Next
-                        </Link>
-                    </button>
                 </div>
+                <button type='submit'>
+                        Next
+                </button>
             </form>
         </div>
     );

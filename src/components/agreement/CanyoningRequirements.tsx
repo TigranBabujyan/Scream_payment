@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import './index.css';
 import 'flag-icons/css/flag-icons.min.css';
-import {NewDataTypes} from "../../types/adminData";
+import { NewDataTypes } from "../../types/adminData";
+import {DocumentData, onSnapshot, QuerySnapshot} from "firebase/firestore";
+import { adminData } from "../../lib/controller";
+import SOSFormCard from "../form-card/FormCard";
+import ButtonUrl from "../Button/ButtonUrl";
 
 const CanyoningRequirements: React.FC = () => {
 
@@ -13,43 +17,28 @@ const CanyoningRequirements: React.FC = () => {
     }
 
 
-    const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
-    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-
-    useEffect(() => {
-        setIsButtonDisabled(!isCheckboxChecked);
-    }, [isCheckboxChecked]);
-
-    const handleCheckboxChange = (event: any) => {
-        setIsCheckboxChecked(event.target.checked);
-    };
-    const checkbox = document.getElementById('myCheckbox') as HTMLInputElement;
-    const button = document.getElementById('myButton') as HTMLButtonElement;
-
-    if (checkbox && button) {
-        checkbox.addEventListener('change', () => {
-            button.disabled = !checkbox.checked;
-        });
-    }
-
     const [apiData, setApiData] = useState<NewDataTypes []>([])
-    const [buttonUrl, setButtonUrl] = useState('')
+    const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        if(apiData[0]) {
-            if(apiData[0].transfer_answer){
-                if(apiData[0].keyForEvent1Transfer){
-                    setButtonUrl(apiData[0].keyForEvent1Transfer)
-                }
-            }
-            if(!apiData[0].transfer_answer){
-                if(apiData[0].keyForEvent1){
-                    setButtonUrl(apiData[0].keyForEvent1)
-                }
-            }
-        }
-    }, [apiData]);
 
+    useEffect(() => onSnapshot(adminData, (snapshot: QuerySnapshot<DocumentData>)=> {
+            setApiData(
+                snapshot.docs.map((doc)=>{
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                }),
+            )
+            setLoading(false);
+        }),
+        []
+    );
+    if(loading){
+        return (
+            <div>Loading...</div>
+        )
+    }
 
     return (
         <div className='main'>
@@ -90,14 +79,16 @@ const CanyoningRequirements: React.FC = () => {
                         </div>
                     </ol>
                 </div>
-                <div className="agreement_wrap">
-                    <div className='checkbox'>
-                        <input type="checkbox" onClick={handleCheckboxChange} id={"myCheckbox"}/>
-                        <div className="agreement">{t("agreement")}</div>
-                    </div>
-                    <div className= 'submit' onClick={()=> window.location.href = `${buttonUrl}`}>
-                        <button className='submit_button' id={'myButton'} disabled={true}>{t('submit')}</button>
-                    </div>
+                <div className='width_test'>
+                    {apiData && apiData.length ? (
+                        <div>
+                            {
+                                apiData?.map((apiData)=>
+                                    <ButtonUrl agreement={t('agreement')} submit={t('submit')} apiData={apiData}/>
+                                )
+                            }
+                        </div>
+                    ): (<div/>)}
                 </div>
             </div>
         </div>
