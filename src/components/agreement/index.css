@@ -40,7 +40,7 @@
     animation: easeInAnimationHeader 3s;
     font-size: 2rem;
     font-weight: bold;
-    color: rgb(80,177,70);
+    color: rgb(11,190,125);
 }
 
 .language {
@@ -115,18 +115,19 @@
     color: rgb(226,236,235);
 }
 
+.submit_wrap {
+    width: 90%;
+}
+
 @media only screen and (max-width: 600px) {
+
 
     .list li {
         font-size: 0.9rem;
     }
-
     .language {
         justify-content: space-around;
         margin: 1rem 0;
     }
 }
 
-.submit_wrap {
-    width: 100%;
-}
