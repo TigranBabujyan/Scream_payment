@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
     background: url("../../../public/background_mount_trees2.svg") no-repeat center ;
     background-size: cover;
 }
@@ -26,7 +25,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(212,175,55, 0.7);
 }
 
 @keyframes easeInAnimationHeader {
@@ -38,11 +36,11 @@
     }
 }
 
-.header {
+.header_agreement {
     animation: easeInAnimationHeader 3s;
     font-size: 2rem;
     font-weight: bold;
-    color: lime;
+    color: rgb(80,177,70);
 }
 
 .language {
@@ -60,19 +58,22 @@
 .checklist {
     display: flex;
     flex-direction: column;
+    color: rgb(226,236,235);
 }
 
 .checklist_title {
     justify-content: space-around;
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: bold;
+    color: rgb(226,236,235)
 }
 
 .checklist_subtitle {
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(226,236,235);
 }
 
 .list {
@@ -85,11 +86,12 @@
 .list li {
     margin: 0.2rem 0;
     font-weight: normal;
+    color: rgb(226,236,235);
 }
 
 .lower_title {
     font-weight: bold;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .price_includes_wrap {
@@ -99,8 +101,8 @@
 }
 
 .includes_title{
-    /*justify-content: center;*/
-    font-weight: bold
+    font-weight: bold;
+    color: rgb(226,236,235)
 }
 
 
@@ -110,12 +112,10 @@
     justify-content: center;
     align-items: flex-start;
     font-weight: bolder;
+    color: rgb(226,236,235);
 }
 
 @media only screen and (max-width: 600px) {
-    .main {
-        height: 160vh;
-    }
 
     .list li {
         font-size: 0.9rem;
@@ -127,6 +127,6 @@
     }
 }
 
-.width_test {
+.submit_wrap {
     width: 100%;
 }

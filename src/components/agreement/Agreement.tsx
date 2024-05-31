@@ -40,7 +40,7 @@ const Agreement: React.FC  = () => {
         <div className='main'>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <div className='body'>
-                <header className='header'>Scream Of Soul</header>
+                <header className='header_agreement'>Scream Of Soul</header>
                 <div className='checklist'>
                     <div className='language'>
                         <div className='empty'/>
@@ -64,7 +64,7 @@ const Agreement: React.FC  = () => {
                     </ol>
                     <div className="lower_title">{t("rope_jumping_agreement.lower_title")}</div>
                 </div>
-                <div className='width_test'>
+                <div className='submit_wrap'>
                     {apiData && apiData.length ? (
                         <div>
                             {
