@@ -9,12 +9,12 @@
     animation: easeInAnimationHeader 3s;
     font-size: 2rem;
     font-weight: bold;
-    color: rgb(80,177,70);
+    color: rgb(11,190,125);
     margin: 0 auto;
 }
 
 .wrap {
-    color: white;
+    color: rgb(226,236,235);
     font-weight: bold;
     margin: 1rem 0;
 }
@@ -42,9 +42,13 @@
 }
 
 .event_body {
-    color: rgb(80,177,70);
+    color: rgb(11,190,125);
 }
 
+.text_correction {
+    color: rgb(226,236,235);
+    font-stretch: extra-condensed;
+}
 
 .title {
     margin: 0 auto;
@@ -60,5 +64,17 @@
 }
 
 .input_text {
-    border: none
+    border-color: black;
+}
+
+.input_text_radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.required {
+    border-color: red;
+    font-weight: bold;
+    color: red;
 }
