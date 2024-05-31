@@ -4,6 +4,8 @@ import {NewDataTypes} from "../../types/adminData";
 import {Link} from "react-router-dom";
 import {editData} from '../../lib/controller'
 import {useNavigate} from "react-router-dom";
+import { Button, Input, Radio, Space} from "antd";
+
 
 
 
@@ -52,6 +54,11 @@ function  SOSFormCard({apiData}: IProps) {
         console.log (selectedEmail, 'selected Email')
     }
 
+    const handleRadioChangeTransfer = (e: any) => {
+        setTransferAnswer(e.target.value)
+        console.log (transferAnswer, 'selected Email')
+    }
+
     const handleSubmit = () => {
         navigate(`${selectedEvent === apiData.event1 ? '/requirements' : '/agreement'}`)
     }
@@ -79,91 +86,68 @@ function  SOSFormCard({apiData}: IProps) {
                     <h1>Event</h1>
                     <form className='event'>
                         <div className='title'>Event Details</div>
-                        <div className='event_wrap'>
-                            <div className="radio">
-                                <input type="radio" id='1st_event' name="event" value={`${apiData.event1}`}
-                                       onChange={handleRadioChangeEvent}/>
-                                <label htmlFor='1st_event'>{apiData.event1}</label>
-                            </div>
-                            <div className='radio'>
-                                <input type="radio" id='2nd_event' name="event" value={`${apiData.event2}`}
-                                       onChange={handleRadioChangeEvent}/>
-                                <label htmlFor='2nd_event'>{apiData.event2}</label>
-                            </div>
-                            <div className='radio'>
-                                <input type="radio" id='3rd_event' name="event" value={`${apiData.event3}`}
-                                       onChange={handleRadioChangeEvent}/>
-                                <label htmlFor='3rd_event'>{apiData.event3}</label>
-                            </div>
-                        </div>
+                        <Radio.Group onChange={handleRadioChangeEvent}>
+                            <Space className='event_wrap' direction="vertical">
+                                <Radio className='text_correction' value={`${apiData.event1}`}>{apiData.event1}</Radio>
+                                <Radio className='text_correction' value={`${apiData.event2}`}>{apiData.event2}</Radio>
+                                <Radio className='text_correction' value={`${apiData.event3}`}>{apiData.event3}</Radio>
+                            </Space>
+                        </Radio.Group>
                     </form>
                 </div>
                 <div className='event'>
                     <div className='title'>{apiData.transfer}</div>
-                    <form>
-                        <div className='radio'>
-                            <input type="radio" id='transfer_yes' name="fav_icon" value="YES"
-                                   onChange={() => {
-                                       setTransferAnswer("YES")
-                                   }}/>
-                            <label htmlFor='transfer_yes'>YES</label>
-                        </div>
-                        <div className='radio'>
-                            <input type="radio" id='transfer_no' name="fav_icon" value="NO"
-                                   onChange={() => {
-                                       setTransferAnswer("NO")
-                                   }}/>
-                            <label htmlFor='transfer_no'>NO</label>
-                        </div>
+                    <form onChange={handleRadioChangeTransfer}>
+                        <Radio.Group>
+                            <Space direction="vertical">
+                                <Radio onChange={() => {
+                                    setTransferAnswer("YES")
+                                }} value='YES'>YES</Radio>
+                                <Radio onChange={() => {
+                                    setTransferAnswer("NO")
+                                }} value='NO'>NO</Radio>
+                            </Space>
+                        </Radio.Group>
                     </form>
                 </div>
                 <div className='event'>
                     <div className='title'>{apiData.social_header}</div>
                     <form>
                         <div className='event_wrap'>
-                            <div className='radio'>
-                                <input type="radio" id='instagram' name="fav_icon" value={`${apiData.social1}`}
-                                       onChange={handleRadioChangeSocial}/>
-                                <label htmlFor={`${apiData.social1}`}>{apiData.social1}</label>
-                            </div>
-                            <div className='radio'>
-                                <input type="radio" id='facebook' name="fav_icon" value={`${apiData.social2}`}
-                                       onChange={handleRadioChangeSocial}/>
-                                <label htmlFor='facebook'>{apiData.social2}</label>
-                            </div>
-                            <div className='radio'>
-                                <input type="radio" id='tiktok' name="fav_icon" value={`${apiData.social3}`}
-                                       onChange={handleRadioChangeSocial}/>
-                                <label htmlFor='tiktok'>{apiData.social3}</label>
-                            </div>
-                            <div className='radio'>
-                                <input type="radio" id='friends' name="fav_icon" value={`${apiData.social4}`}
-                                       onChange={handleRadioChangeSocial}/>
-                                <label htmlFor='friends'>{apiData.social4}</label>
-                            </div>
-                            <div className='radio'>
-                                <input type="radio" id='google' name="fav_icon" value={`${apiData.social5}`}
-                                       onChange={handleRadioChangeSocial}/>
-                                <label htmlFor='google'>{apiData.social5}</label>
-                            </div>
-                            <div className='radio'>
-                                <input type="radio" id='telegram' name="fav_icon" value={`${apiData.social6}`}
-                                       onChange={handleRadioChangeSocial}/>
-                                <label htmlFor='telegram'>{apiData.social6}</label>
-                            </div>
+                            <Radio.Group onChange={handleRadioChangeEvent}>
+                                <Space className='event_wrap' direction="vertical">
+                                    <Radio value={`${apiData.social1}`}>{apiData.social1}</Radio>
+                                    <Radio value={`${apiData.social2}`}>{apiData.social2}</Radio>
+                                    <Radio value={`${apiData.social3}`}>{apiData.social3}</Radio>
+                                    <Radio value={`${apiData.social4}`}>{apiData.social4}</Radio>
+                                    <Radio value={`${apiData.social5}`}>{apiData.social5}</Radio>
+                                    <Radio value={`${apiData.social6}`}>
+                                        {selectedEvent === apiData.social6 ? (
+                                            <Input
+                                                style={{
+                                                    width: 100,
+                                                    marginLeft: 10,
+                                                    display: 'flex',
+                                                    flexDirection: 'column'
+                                                }}
+                                            />
+                                        ) : 'More...'}
+                                    </Radio>
+                                </Space>
+                            </Radio.Group>
                         </div>
                     </form>
                     <form>
                         <div className="input">
                             <div className='title'>Name/Имя/Անուն</div>
-                            <input type="text" className='input_text' id='name' name="fav_icon"
+                            <Input type="text" className='input_text' id='name' name="fav_icon"
                                    placeholder='Enter Your Name' required
                                    onChange={handleRadioChangeName}/>
                             <label htmlFor='surname'>{apiData.name}</label>
                         </div>
                         <div className="input">
                             <div className='title'>Surname/Фамилия/Ազգանուն</div>
-                            <input type="text" className='input_text' id='surname' name="fav_icon"
+                            <Input type="text" className='input_text' id='surname' name="fav_icon"
                                    placeholder='Enter Your Surname' required
                                    onChange={handleRadioChangeSurname}/>
                             <label htmlFor='surname'>{apiData.surname}</label>
@@ -171,22 +155,22 @@ function  SOSFormCard({apiData}: IProps) {
                         <div className='number'>
                             <form>
                                 <div className='title'>{apiData.number_title}</div>
-                                <input type='text' className='input_text' id='number' placeholder='Enter Your Number!'
+                                <Input type='text' className='input_text' id='number' placeholder='Enter Your Number!'
                                        onChange={handleRadioChangeNumber}/>
                             </form>
                         </div>
                         <div className='email'>
                             <form>
                                 <div className='title'>{apiData.email_title}</div>
-                                <input type='text' className='input_text' id='number' placeholder='Enter Your Number!'
+                                <Input type='text' className='input_text' id='number' placeholder='Enter Your Number!'
                                        onChange={handleRadioChangeEmail}/>
                             </form>
                         </div>
                     </form>
                 </div>
-                <button type='submit'>
+                <Button htmlType='submit'>
                         Next
-                </button>
+                </Button>
             </form>
         </div>
     );

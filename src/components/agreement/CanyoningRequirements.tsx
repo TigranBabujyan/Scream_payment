@@ -6,7 +6,6 @@ import 'flag-icons/css/flag-icons.min.css';
 import { NewDataTypes } from "../../types/adminData";
 import {DocumentData, onSnapshot, QuerySnapshot} from "firebase/firestore";
 import { adminData } from "../../lib/controller";
-import SOSFormCard from "../form-card/FormCard";
 import ButtonUrl from "../Button/ButtonUrl";
 
 const CanyoningRequirements: React.FC = () => {
@@ -44,9 +43,8 @@ const CanyoningRequirements: React.FC = () => {
         <div className='main'>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <div className='body'>
-                <header className='header'>Scream Of Soul</header>
+                <header className='header_agreement'>Scream Of Soul</header>
                 <div className='checklist'>
-                    {/*Need to replace buttons to the same line with header*/}
                     <div className='language'>
                         <div className='lang_buttons'>
                             <button className='button' onClick={() => handleChangeLanguage("am")}><span
@@ -79,7 +77,7 @@ const CanyoningRequirements: React.FC = () => {
                         </div>
                     </ol>
                 </div>
-                <div className='width_test'>
+                <div className='submit_wrap'>
                     {apiData && apiData.length ? (
                         <div>
                             {

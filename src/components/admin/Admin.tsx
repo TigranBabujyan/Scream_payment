@@ -3,6 +3,7 @@ import './index.css';
 import 'flag-icons/css/flag-icons.min.css';
 import {editData} from '../../lib/controller'
 import {useNavigate} from "react-router-dom";
+import { Button, Input } from "antd";
 
 
 const Admin: React.FC = () => {
@@ -55,7 +56,7 @@ const Admin: React.FC = () => {
         <div className='main'>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <div className='body'>
-                <form onSubmit={(e) => changeEventDetails(e)}>
+                <form className='form_wrap' onSubmit={(e) => changeEventDetails(e)}>
                     <header className='header'>Scream Of Soul</header>
                     <header className='header'>Admin</header>
                     <div className='wrap'>
@@ -63,7 +64,7 @@ const Admin: React.FC = () => {
                         <form onSubmit={(e) => changeEventDetails(e)} className='event'>
                             <div className="input">
                                 <label>Event:1</label>
-                                <input
+                                <Input
                                     type="text"
                                     value={event1}
                                     id='event1'
@@ -74,7 +75,7 @@ const Admin: React.FC = () => {
                             </div>
                             <div className='input'>
                                 <label>Event:2</label>
-                                <input
+                                <Input
                                     type="text"
                                     value={event2}
                                     id='event2'
@@ -85,7 +86,7 @@ const Admin: React.FC = () => {
                             </div>
                             <div className='input'>
                                 <label>Event:3</label>
-                                <input
+                                <Input
                                     type="text"
                                     value={event3}
                                     id='event3'
@@ -101,7 +102,7 @@ const Admin: React.FC = () => {
                         <form onSubmit={(e) => changeEventDetails(e)}>
                             <div className='input'>
                                 <label>Input Transfer Details</label>
-                                <input
+                                <Input
                                     type="text"
                                     value={transfer}
                                     id='transfer'
@@ -115,7 +116,7 @@ const Admin: React.FC = () => {
                     <div className='input'>
                         <label>Number Details</label>
                         <form onSubmit={(e) => changeEventDetails(e)}>
-                            <input
+                            <Input
                                 type="string"
                                 value={number}
                                 id='number'
@@ -129,7 +130,7 @@ const Admin: React.FC = () => {
                         <header>How you know about us</header>
                         <form onSubmit={(e) => changeEventDetails(e)}>
                             <div className='input'>
-                                <input
+                                <Input
                                     type="text"
                                     value={social_title}
                                     id='event_title'
@@ -139,7 +140,7 @@ const Admin: React.FC = () => {
                                 />
                             </div>
                             <div className='input'>
-                                <input
+                                <Input
                                     type="text"
                                     value={social1}
                                     id='social1'
@@ -149,7 +150,7 @@ const Admin: React.FC = () => {
                                 />
                             </div>
                             <div className='input'>
-                                <input
+                                <Input
                                     type="text"
                                     value={social2}
                                     id='social2'
@@ -159,7 +160,7 @@ const Admin: React.FC = () => {
                                 />
                             </div>
                             <div className='input'>
-                                <input
+                                <Input
                                     type="text"
                                     value={social3}
                                     id='social3'
@@ -169,7 +170,7 @@ const Admin: React.FC = () => {
                                 />
                             </div>
                             <div className='input'>
-                                <input
+                                <Input
                                     type="text"
                                     value={social4}
                                     id='social4'
@@ -179,7 +180,7 @@ const Admin: React.FC = () => {
                                 />
                             </div>
                             <div className='input'>
-                                <input
+                                <Input
                                     type="text"
                                     value={social5}
                                     id='social5'
@@ -189,7 +190,7 @@ const Admin: React.FC = () => {
                                 />
                             </div>
                             <div className='input'>
-                                <input
+                                <Input
                                     type="text"
                                     value={social6}
                                     id='social6'
@@ -201,15 +202,15 @@ const Admin: React.FC = () => {
                         </form>
                         <form className='keyEvent_wrap'>
                             <header>Input url to make buttons work!</header>
-                            <input placeholder='event:1 url' onChange={(e) => setKeyForEvent1(e.target.value)}
+                            <Input placeholder='event:1 url' onChange={(e) => setKeyForEvent1(e.target.value)}
                                    type='text'/>
-                            <input placeholder='event:2 url' onChange={(e) => setKeyForEvent2(e.target.value)}
+                            <Input placeholder='event:2 url' onChange={(e) => setKeyForEvent2(e.target.value)}
                                    type='text'/>
-                            <input placeholder='event:3 url' onChange={(e) => setKeyForEvent3(e.target.value)}
+                            <Input placeholder='event:3 url' onChange={(e) => setKeyForEvent3(e.target.value)}
                                    type='text'/>
                         </form>
                     </div>
-                    <button type='submit'>SAVE</button>
+                    <Button htmlType='submit'>SAVE</Button>
                 </form>
             </div>
         </div>

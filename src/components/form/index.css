@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
     background: url("../../../public/background_mount_trees2.svg") no-repeat center ;
     background-size: cover;
 }
@@ -27,7 +26,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background: rgba(212,175,55, 0.7);
+    /*background: rgba(212,175,55, 0.7);*/
 }
 
 @keyframes easeInAnimationHeader {
@@ -43,6 +42,5 @@
     animation: easeInAnimationHeader 3s;
     font-size: 2rem;
     font-weight: bold;
-    color: lime;
     margin: 0 auto;
 }
